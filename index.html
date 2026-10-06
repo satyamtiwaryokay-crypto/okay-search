@@ -3,23 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Okay Search</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: white;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 150px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 55px;
+            margin-bottom: 35px;
+        }
+
+        .search-box {
+            max-width: 650px;
+            margin: auto;
+            display: flex;
+            border: 1px solid #ccc;
+            border-radius: 30px;
+            overflow: hidden;
+        }
+
+        input {
+            flex: 1;
+            padding: 18px 20px;
+            border: none;
+            outline: none;
+            font-size: 18px;
+        }
+
+        button {
+            width: 70px;
+            border: none;
+            background: white;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #f2f2f2;
+        }
+
+        #message {
+            margin-top: 25px;
+            color: #555;
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>Okay Search</h1>
+    <div class="container">
 
-    <input type="text" id="searchInput" placeholder="Search the web...">
+        <h1>Okay Search</h1>
 
-    <button onclick="searchWeb()">🔍 Search</button>
+        <div class="search-box">
 
-    <p id="message"></p>
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search the web..."
+                onkeydown="handleEnter(event)"
+            >
+
+            <button onclick="searchWeb()">🔍</button>
+
+        </div>
+
+        <p id="message"></p>
+
+    </div>
 
     <script>
+
         function searchWeb() {
 
-            let query = document.getElementById("searchInput").value.trim();
+            let query = document
+                .getElementById("searchInput")
+                .value
+                .trim();
 
             if (query === "") {
                 alert("Please enter something to search.");
@@ -27,8 +102,17 @@
             }
 
             document.getElementById("message").innerText =
-                "You searched for: " + query;
+                "Searching for: " + query;
         }
+
+        function handleEnter(event) {
+
+            if (event.key === "Enter") {
+                searchWeb();
+            }
+
+        }
+
     </script>
 
 </body>
