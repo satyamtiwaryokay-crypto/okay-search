@@ -1,1 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Okay Search</title>
+</head>
 
+<body>
+
+    <h1>Okay Search</h1>
+
+    <input type="text" id="searchInput" placeholder="Search the web...">
+
+    <button onclick="searchWeb()">🔍 Search</button>
+
+    <p id="message"></p>
+
+    <script>
+        function searchWeb() {
+
+            let query = document.getElementById("searchInput").value.trim();
+
+            if (query === "") {
+                alert("Please enter something to search.");
+                return;
+            }
+
+            document.getElementById("message").innerText =
+                "You searched for: " + query;
+        }
+    </script>
+
+</body>
+</html>
