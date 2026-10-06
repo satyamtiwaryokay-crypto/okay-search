@@ -1275,7 +1275,82 @@ function toggleDarkMode() {
 
 
 </script>
+<style>
+  .okay-logo {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 56px;
+    font-weight: 700;
+    letter-spacing: -4px;
+    line-height: 1;
+  }
 
+  .okay-logo .o {
+    color: #e53935;
+  }
+
+  .okay-logo .k {
+    color: #4285f4;
+  }
+
+  .okay-logo .a {
+    color: #fbbc05;
+  }
+
+  .okay-logo .y {
+    color: #34a853;
+  }
+</style>
+      <style>
+  .okay-logo {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 56px;
+    font-weight: 700;
+    letter-spacing: -4px;
+    line-height: 1;
+  }
+
+  .okay-logo .o {
+    color: #e53935;
+  }
+
+  .okay-logo .k {
+    color: #4285f4;
+  }
+
+  .okay-logo .a {
+    color: #fbbc05;
+  }
+
+  .okay-logo .y {
+    color: #34a853;
+  }
+</style>
+
+<script>
+  const oldLogo = document.querySelector(".logo");
+
+  if (oldLogo) {
+    oldLogo.className = "okay-logo";
+    oldLogo.innerHTML =
+      '<span class="o">O</span>' +
+      '<span class="k">k</span>' +
+      '<span class="a">a</span>' +
+      '<span class="y">y</span>';
+  }
+</script>
+
+<script>
+  const oldLogo = document.querySelector(".logo");
+
+  if (oldLogo) {
+    oldLogo.className = "okay-logo";
+    oldLogo.innerHTML =
+      '<span class="o">O</span>' +
+      '<span class="k">k</span>' +
+      '<span class="a">a</span>' +
+      '<span class="y">y</span>';
+  }
+</script>
 </body>
 
 </html>
