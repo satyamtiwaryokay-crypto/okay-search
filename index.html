@@ -558,39 +558,55 @@ const API_URL =
 
 async function searchWeb() {
 
-  let query;
+  let query = "";
 
-if (document.getElementById("resultsPage").style.display === "block") {
+  const homePage =
+    document.getElementById("homePage");
 
-  query = document
-    .getElementById("resultsInput")
-    .value
-    .trim();
+  const resultsPage =
+    document.getElementById("resultsPage");
 
-} else {
+  const homeInput =
+    document.getElementById("searchInput");
 
-  query = document
-    .getElementById("searchInput")
-    .value
-    .trim();
+  const resultsInput =
+    document.getElementById("resultsInput");
+
+  /*
+    Results page par hamesha resultsInput ki
+    current value use hogi.
+  */
+
+  if (resultsPage.style.display === "block") {
+
+    query = resultsInput.value.trim();
+
+  } else {
+
+    query = homeInput.value.trim();
 
   }
+
 
   if (query === "") {
 
     alert("Please enter something to search.");
 
     return;
+
   }
 
-  document.getElementById("homePage").style.display =
-    "none";
 
-  document.getElementById("resultsPage").style.display =
-    "block";
+  // Home page hide
+  homePage.style.display = "none";
 
-  document.getElementById("resultsInput").value =
-    query;
+  // Results page show
+  resultsPage.style.display = "block";
+
+
+  // Nayi query results box mein set karo
+  resultsInput.value = query;
+
 
   const loading =
     document.getElementById("loading");
@@ -598,9 +614,11 @@ if (document.getElementById("resultsPage").style.display === "block") {
   const results =
     document.getElementById("results");
 
-  loading.style.display = "block";
 
+  // Purane results turant clear karo
   results.innerHTML = "";
+
+  loading.style.display = "block";
 
 
   try {
@@ -633,6 +651,7 @@ if (document.getElementById("resultsPage").style.display === "block") {
         "</p>";
 
       return;
+
     }
 
 
@@ -643,6 +662,7 @@ if (document.getElementById("resultsPage").style.display === "block") {
         "<p>No results found.</p>";
 
       return;
+
     }
 
 
@@ -656,6 +676,7 @@ if (document.getElementById("resultsPage").style.display === "block") {
 
 
       let imageHTML = "";
+
 
       if (item.image_url) {
 
@@ -701,30 +722,8 @@ if (document.getElementById("resultsPage").style.display === "block") {
     console.error(error);
 
   }
-}
-
-
-/* =====================================================
-   ENTER KEY
-===================================================== */
-
-function handleEnter(event) {
-
-  if (event.key === "Enter") {
-    searchWeb();
-  }
 
 }
-
-
-function handleResultsEnter(event) {
-
-  if (event.key === "Enter") {
-    searchWeb();
-  }
-
-}
-
 
 /* =====================================================
    FOCUS
