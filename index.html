@@ -558,17 +558,22 @@ const API_URL =
 
 async function searchWeb() {
 
-  let query =
-    document.getElementById("searchInput").value.trim();
+  let query;
 
-  if (query === "") {
+if (document.getElementById("resultsPage").style.display === "block") {
 
-    const resultsInput =
-      document.getElementById("resultsInput");
+  query = document
+    .getElementById("resultsInput")
+    .value
+    .trim();
 
-    if (resultsInput) {
-      query = resultsInput.value.trim();
-    }
+} else {
+
+  query = document
+    .getElementById("searchInput")
+    .value
+    .trim();
+
   }
 
   if (query === "") {
