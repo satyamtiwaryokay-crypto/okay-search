@@ -68,11 +68,12 @@ body.dark {
 /* Small logo */
 
 .small-logo {
-  font-family: "Trebuchet MS", Arial, sans-serif;
-  font-size: 38px;
+  font-family: Georgia, serif;
+  font-size: 42px;
   font-weight: 600;
-  letter-spacing: -4px;
+  letter-spacing: 5px;
   transform: scaleX(.92);
+  margin-top: 10px;
 }
 
 .small-logo .o {
@@ -216,16 +217,16 @@ body.dark {
 
 .results-top {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 22px;
-  flex-wrap: wrap;
+  gap: 28px;
+  width: 100%;
 }
 
 .result-search {
-  flex: 1;
+  width: min(650px, 92%);
   max-width: 650px;
 }
-
 .result-search .search-box {
   width: 100%;
   margin: 0;
