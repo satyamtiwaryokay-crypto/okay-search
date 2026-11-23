@@ -723,7 +723,17 @@ async function searchWeb() {
   }
 
 }
+function handleEnter(event) {
+  if (event.key === "Enter") {
+    searchWeb();
+  }
+}
 
+function handleResultsEnter(event) {
+  if (event.key === "Enter") {
+    searchWeb();
+  }
+}
 /* =====================================================
    FOCUS
 ===================================================== */
